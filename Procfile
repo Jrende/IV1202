@@ -1,2 +1,2 @@
-web:	./target/start --http.port=$PORT $PLAY_OPTS
+web: ./target/start -Dhttp.port=${PORT} ${JAVA_OPTS}
 
