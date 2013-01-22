@@ -1,0 +1,7 @@
+#sidebar {
+	float:left;
+	background-color: lightgray;
+	height: 20em;
+	margin-right: 2em;
+	padding: 1em;
+}

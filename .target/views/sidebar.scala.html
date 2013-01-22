@@ -1,0 +1,11 @@
+@(title: String)
+<div id="sidebar">
+	<h2>title</h2>
+	<ul>
+		@defining(Array( "Page 1", "Page 2", "Page 3", "Page 4", "Page 5" )) { links =>
+			@for(link <- links) {
+				<li>@link</li> 
+			}
+		}
+	</ul>
+</div>
