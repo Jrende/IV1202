@@ -10,7 +10,7 @@ import play.db.ebean.Model;
 
 @Entity 
 @Table(name="account")
-public class User {
+public class User extends Model{
 	
     @Id
     @Constraints.Required
