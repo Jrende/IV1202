@@ -30,7 +30,7 @@ public class User extends Model{
     public String name;
     
     @Constraints.Required
-    public enum role;
+    public Role role;
     
     public String ssn;
     
