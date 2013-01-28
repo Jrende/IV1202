@@ -15,6 +15,9 @@ public class User extends Model{
     @Id
     @Constraints.Required
     @Formats.NonEmpty
+    public Long person_id;
+    
+    @Constraints.Required
     public String username;
     
     @Constraints.Required
@@ -24,7 +27,12 @@ public class User extends Model{
     public String surname;
     
     @Constraints.Required
-    public String lastname;
+    public String name;
+    
+    @Constraints.Required
+    public Role role;
+    
+    public String ssn;
     
     @Constraints.Required
     public Integer birthdate;

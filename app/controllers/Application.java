@@ -8,6 +8,7 @@ import views.html.*;
 import models.*;
 
 public class Application extends Controller {
+	
 	public static class Login {
 		public String username;
 		public String password;
@@ -19,6 +20,7 @@ public class Application extends Controller {
 			return null;
 		}
 	}
+	
 	static Form<User> userForm = form(User.class);
 
 	public static Result index() {
