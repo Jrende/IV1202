@@ -8,32 +8,37 @@ import views.html.*;
 import models.*;
 
 public class Application extends Controller {
-	static Form<Task> taskForm = form(Task.class);
+	public static class Login {
+		public String username;
+		public String password;
 
-	public static Result index() {
-		return redirect(routes.Application.tasks());
+		public String validate() {
+			if(User.authenticate(username, password) == null) {
+				return "Fel lösenord eller användarnamn!";
+			}
+			return null;
+		}
 	}
+	static Form<User> userForm = form(User.class);
 
-	public static Result tasks() {
+
+	public static Result login() {
 		return ok(
-			views.html.index.render(Task.all(), taskForm)
-		);
+				login.render(form(Login.class))
+				);
 	}
 
-	public static Result newTask() {
-		Form<Task> filledForm = taskForm.bindFromRequest();
+	public static Result newUser() {
+		Form<Task> filledForm = userForm.bindFromRequest();
 		if(filledForm.hasErrors()) {
 			return badRequest(
 					views.html.index.render(Task.all(), filledForm)
 					);
 		} else {
 			Task.create(filledForm.get());
-			return redirect(routes.Application.tasks());  
+			return redirect(routes.Application.users());  
 		}
 	}
+	//Saknas: Autentisera formulär, redirekta till rätt sida, alla routes
 
-	public static Result deleteTask(Long id) {
-		Task.delete(id);
-		return redirect(routes.Application.tasks());  
-	}
 }
