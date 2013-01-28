@@ -21,23 +21,17 @@ public class Application extends Controller {
 	}
 	static Form<User> userForm = form(User.class);
 
+	public static Result index() {
+		return ok(main.render("index", null));
+
+	}
 
 	public static Result login() {
-		return ok(
-				login.render(form(Login.class))
-				);
+		return TODO;
 	}
 
 	public static Result newUser() {
-		Form<Task> filledForm = userForm.bindFromRequest();
-		if(filledForm.hasErrors()) {
-			return badRequest(
-					views.html.index.render(Task.all(), filledForm)
-					);
-		} else {
-			Task.create(filledForm.get());
-			return redirect(routes.Application.users());  
-		}
+		return TODO;
 	}
 	//Saknas: Autentisera formulär, redirekta till rätt sida, alla routes
 
