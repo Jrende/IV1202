@@ -32,9 +32,16 @@ public class Application extends Controller {
 		return TODO;
 	}
 
+	public static Result logout() {
+		return TODO;
+	}
+
 	public static Result newUser() {
 		return TODO;
 	}
-	//Saknas: Autentisera formulär, redirekta till rätt sida, alla routes
+	public static Result register() {
+		return TODO;
+	}
 
+	//Saknas: Autentisera formulär, redirekta till rätt sida, alla routes
 }
